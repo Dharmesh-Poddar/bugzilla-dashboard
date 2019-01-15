@@ -126,6 +126,7 @@ exports[`renders Manager who has reportees 1`] = `
                   product="Core"
                   role="button"
                   tabIndex="0"
+                  teamkey={null}
                 >
                   <svg
                     aria-hidden="true"
@@ -158,6 +159,7 @@ exports[`renders Manager who has reportees 1`] = `
                   product="Core"
                   role="button"
                   tabIndex="0"
+                  teamkey={null}
                 >
                   <svg
                     aria-hidden="true"
@@ -190,6 +192,7 @@ exports[`renders Manager who has reportees 1`] = `
                   product="Core"
                   role="button"
                   tabIndex="0"
+                  teamkey={null}
                 >
                   <svg
                     aria-hidden="true"
@@ -231,6 +234,7 @@ exports[`renders Manager who has reportees 1`] = `
                   product="Toolkit"
                   role="button"
                   tabIndex="0"
+                  teamkey={null}
                 >
                   <svg
                     aria-hidden="true"
@@ -387,6 +391,7 @@ exports[`renders Manager who has reportees and teams 1`] = `
                   product="Core"
                   role="button"
                   tabIndex="0"
+                  teamkey={null}
                 >
                   <svg
                     aria-hidden="true"
@@ -419,6 +424,7 @@ exports[`renders Manager who has reportees and teams 1`] = `
                   product="Core"
                   role="button"
                   tabIndex="0"
+                  teamkey={null}
                 >
                   <svg
                     aria-hidden="true"
@@ -451,6 +457,7 @@ exports[`renders Manager who has reportees and teams 1`] = `
                   product="Core"
                   role="button"
                   tabIndex="0"
+                  teamkey={null}
                 >
                   <svg
                     aria-hidden="true"
@@ -492,6 +499,7 @@ exports[`renders Manager who has reportees and teams 1`] = `
                   product="Toolkit"
                   role="button"
                   tabIndex="0"
+                  teamkey={null}
                 >
                   <svg
                     aria-hidden="true"
@@ -648,6 +656,7 @@ exports[`renders Someone with no reportees 1`] = `
                   product="Core"
                   role="button"
                   tabIndex="0"
+                  teamkey={null}
                 >
                   <svg
                     aria-hidden="true"
@@ -680,6 +689,7 @@ exports[`renders Someone with no reportees 1`] = `
                   product="Core"
                   role="button"
                   tabIndex="0"
+                  teamkey={null}
                 >
                   <svg
                     aria-hidden="true"
@@ -712,6 +722,7 @@ exports[`renders Someone with no reportees 1`] = `
                   product="Core"
                   role="button"
                   tabIndex="0"
+                  teamkey={null}
                 >
                   <svg
                     aria-hidden="true"
@@ -753,6 +764,7 @@ exports[`renders Someone with no reportees 1`] = `
                   product="Toolkit"
                   role="button"
                   tabIndex="0"
+                  teamkey={null}
                 >
                   <svg
                     aria-hidden="true"

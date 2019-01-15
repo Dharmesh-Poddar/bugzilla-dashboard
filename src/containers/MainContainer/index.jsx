@@ -104,7 +104,7 @@ class MainContainer extends Component {
       // This will cause the teams to be displayed before having any metrics
       this.setState({ teamComponents });
       Object.entries(teamComponents).map(async ([teamKey, teamInfo]) => {
-        const team = Object.assign({}, teamInfo);
+        const team = Object.assign({ teamKey }, teamInfo);
         team.metrics = {};
         const { product, component } = teamInfo;
         await Promise.all(Object.keys(METRICS).map(async (metric) => {
@@ -134,10 +134,24 @@ class MainContainer extends Component {
       const element = event.target.tagName === 'DIV' ? event.target : event.target.parentElement;
       const product = element.getAttribute('product');
       const component = element.getAttribute('component');
-      this.setState(prevState => ({
-        showComponent: prevState.bugzillaComponents[`${product}::${component}`],
-        showPerson: undefined,
-      }));
+      const teamKey = element.getAttribute('teamkey');
+      if (teamKey) {
+        this.setState(prevState => ({
+          showComponent: {
+            title: prevState.teamComponents[teamKey].label,
+            ...prevState.teamComponents[teamKey],
+          },
+          showPerson: undefined,
+        }));
+      } else {
+        this.setState(prevState => ({
+          showComponent: {
+            title: `${product}::${component}`,
+            ...prevState.bugzillaComponents[`${product}::${component}`],
+          },
+          showPerson: undefined,
+        }));
+      }
     }
 
     handleShowPersonDetails(event) {
@@ -169,6 +183,7 @@ class MainContainer extends Component {
           {showComponent && (
             <BugzillaComponentDetails
               {...showComponent}
+              title={showComponent.title}
               onGoBack={this.handleComponentBackToMenu}
             />
           )}

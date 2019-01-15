@@ -42,7 +42,7 @@ const BugzillaComponents = ({
           {bugzillaComponents
             .sort(sortByComponentName)
             .map(({
-              label, component, product, metrics = {},
+              label, component, product, metrics = {}, teamKey = null,
             }) => (
               <tr key={label}>
                 {onComponentDetails && (
@@ -53,6 +53,7 @@ const BugzillaComponents = ({
                       onClick={onComponentDetails}
                       product={product}
                       component={component}
+                      teamkey={teamKey}
                       role="button"
                       tabIndex="0"
                     >
