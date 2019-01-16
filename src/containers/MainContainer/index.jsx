@@ -146,7 +146,6 @@ class MainContainer extends Component {
             title: prevState.teamComponents[teamKey].label,
             ...prevState.teamComponents[teamKey],
           },
-          showPerson: undefined,
         }));
       } else {
         this.setState(prevState => ({
@@ -154,7 +153,6 @@ class MainContainer extends Component {
             title: bzComponentKey,
             ...prevState.bugzillaComponents[bzComponentKey],
           },
-          showPerson: undefined,
         }));
       }
     }
@@ -165,7 +163,6 @@ class MainContainer extends Component {
       const ldapEmail = element.getAttribute('value');
       const { partialOrg } = this.state;
       this.setState({
-        showComponent: undefined,
         showPerson: partialOrg[ldapEmail],
       });
     }
