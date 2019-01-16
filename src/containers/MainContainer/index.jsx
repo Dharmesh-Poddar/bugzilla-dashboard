@@ -104,8 +104,11 @@ class MainContainer extends Component {
       // This will cause the teams to be displayed before having any metrics
       this.setState({ teamComponents });
       Object.entries(teamComponents).map(async ([teamKey, teamInfo]) => {
-        const team = Object.assign({ teamKey }, teamInfo);
-        team.metrics = {};
+        const team = {
+          teamKey,
+          ...teamInfo,
+          metrics: {},
+        };
         const { product, component } = teamInfo;
         await Promise.all(Object.keys(METRICS).map(async (metric) => {
           team.metrics[metric] = await getBugsCountAndLink(product, component, metric);
