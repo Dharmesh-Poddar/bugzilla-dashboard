@@ -132,8 +132,10 @@ class MainContainer extends Component {
     handleShowComponentDetails(event) {
       event.preventDefault();
       const element = event.target.tagName === 'DIV' ? event.target : event.target.parentElement;
-      const product = element.getAttribute('product');
-      const component = element.getAttribute('component');
+      // IDEA: In the future we could unify bugzilla components and teams into
+      // the same data structure and make this logic simpler. We could use a
+      // property 'team' to distinguish a component from a set of components
+      const bzComponentKey = element.getAttribute('bzcomponentkey');
       const teamKey = element.getAttribute('teamkey');
       if (teamKey) {
         this.setState(prevState => ({
@@ -146,8 +148,8 @@ class MainContainer extends Component {
       } else {
         this.setState(prevState => ({
           showComponent: {
-            title: `${product}::${component}`,
-            ...prevState.bugzillaComponents[`${product}::${component}`],
+            title: bzComponentKey,
+            ...prevState.bugzillaComponents[bzComponentKey],
           },
           showPerson: undefined,
         }));
