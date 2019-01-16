@@ -14,6 +14,11 @@ const styles = ({
   metricLabel: {
     textDecoration: 'underline',
   },
+  svgWrapper: {
+    '&:hover': {
+      borderBottomStyle: 'ridge',
+    },
+  },
   icon: {
     fontSize: '1rem',
     verticalAlign: 'bottom',
@@ -48,6 +53,7 @@ const BugzillaComponents = ({
                 {onComponentDetails && (
                   <td>
                     <div
+                      className={classes.svgWrapper}
                       name={label}
                       onKeyPress={onComponentDetails}
                       onClick={onComponentDetails}
